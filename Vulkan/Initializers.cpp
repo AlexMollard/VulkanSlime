@@ -1,6 +1,6 @@
-#include "Initializers.h"
+#include "Initilizers.h"
 
-VkApplicationInfo Initializers::ApplicationInfo(VulkanConfiguration& config)
+VkApplicationInfo Initilizers::ApplicationInfo(VulkanConfiguration& config)
 {
 	VkApplicationInfo info = {};
 	info.sType = VK_STRUCTURE_TYPE_APPLICATION_INFO;
@@ -13,7 +13,7 @@ VkApplicationInfo Initializers::ApplicationInfo(VulkanConfiguration& config)
 	return info;
 }
 
-VkInstanceCreateInfo Initializers::InstanceCreateInfo(VkApplicationInfo& app_info, std::vector<const char*>& layers, std::vector<const char*>& extensions)
+VkInstanceCreateInfo Initilizers::InstanceCreateInfo(VkApplicationInfo& app_info, std::vector<const char*>& layers, std::vector<const char*>& extensions)
 {
 	VkInstanceCreateInfo info = {};
 	info.sType = VK_STRUCTURE_TYPE_INSTANCE_CREATE_INFO;
@@ -24,4 +24,26 @@ VkInstanceCreateInfo Initializers::InstanceCreateInfo(VkApplicationInfo& app_inf
 	info.ppEnabledLayerNames = layers.data();
 
 	return info;
+}
+
+VkDeviceQueueCreateInfo Initilizers::DeviceQueueCreate(uint32_t queueFamilyIndices, float& priority)
+{
+	VkDeviceQueueCreateInfo queueCreateInfo{};
+	queueCreateInfo.sType = VK_STRUCTURE_TYPE_DEVICE_QUEUE_CREATE_INFO;
+	queueCreateInfo.queueFamilyIndex = queueFamilyIndices;
+	queueCreateInfo.queueCount = 1;
+	queueCreateInfo.pQueuePriorities = &priority;
+
+	return queueCreateInfo;
+}
+
+VkDeviceCreateInfo Initilizers::DeviceCreateInfo(std::vector<VkDeviceQueueCreateInfo>& queueCreateInfo, VkPhysicalDeviceFeatures& deviceFeatures)
+{
+	VkDeviceCreateInfo createInfo{};
+	createInfo.sType = VK_STRUCTURE_TYPE_DEVICE_CREATE_INFO;
+	createInfo.pQueueCreateInfos = queueCreateInfo.data();
+	createInfo.queueCreateInfoCount = (uint32_t)queueCreateInfo.size();
+	createInfo.pEnabledFeatures = &deviceFeatures;
+
+	return createInfo;
 }

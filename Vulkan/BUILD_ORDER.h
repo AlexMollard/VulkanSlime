@@ -9,6 +9,12 @@
 
 #include "VulkanConfiguration.h"
 
-#include "Initializers.h"
+#include "Initilizers.h"
 
 #include "VulkanInstance.h"
+
+#include "QueueFamilyIndices.h"
+
+#include "VulkanPhysicalDevice.h"
+
+#include "VulkanDevice.h"

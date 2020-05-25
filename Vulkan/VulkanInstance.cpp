@@ -2,9 +2,9 @@
 
 VulkanInstance::VulkanInstance(VulkanConfiguration& vulkanConfig)
 {
-	VkApplicationInfo applicationInfo = Initializers::ApplicationInfo(vulkanConfig);
+	VkApplicationInfo applicationInfo = Initilizers::ApplicationInfo(vulkanConfig);
 
-	VkInstanceCreateInfo instance_info = Initializers::InstanceCreateInfo(applicationInfo, layers, extensions);
+	VkInstanceCreateInfo instance_info = Initilizers::InstanceCreateInfo(applicationInfo, layers, extensions);
 
 	ErrorCheck(vkCreateInstance(&instance_info, NULL, &instance));
 }

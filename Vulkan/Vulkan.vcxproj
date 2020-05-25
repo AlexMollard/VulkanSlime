@@ -72,23 +72,23 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>C:\VulkanSDK\1.1.126.0\Include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\VulkanSDK\Lib32;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\VulkanSDK\1.2.135.0\Include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\VulkanSDK\1.2.135.0\Lib32;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>C:\VulkanSDK\1.1.126.0\Include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\VulkanSDK\Lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\VulkanSDK\1.2.135.0\Include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\VulkanSDK\1.2.135.0\Lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>C:\VulkanSDK\1.1.126.0\Include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\VulkanSDK\Lib32;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\VulkanSDK\1.2.135.0\Include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\VulkanSDK\1.2.135.0\Lib32;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>C:\VulkanSDK\1.1.126.0\Include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\VulkanSDK\Lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\VulkanSDK\1.2.135.0\Include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\VulkanSDK\1.2.135.0\Lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -98,7 +98,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\VulkanSDK\1.1.126.0\Include;C:\VulkanSDK\1.1.126.0\Lib32</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\VulkanSDK\1.2.135.0\Include;C:\VulkanSDK\1.2.135.0\Lib32</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -115,7 +115,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\VulkanSDK\1.1.126.0\Include;C:\VulkanSDK\1.1.126.0\Lib</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\VulkanSDK\1.2.135.0\Include;C:\VulkanSDK\1.2.135.0\Lib</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -134,7 +134,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\VulkanSDK\1.1.126.0\Include;C:\VulkanSDK\1.1.126.0\Lib32</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\VulkanSDK\1.2.135.0\Include;C:\VulkanSDK\1.2.135.0\Lib32</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -155,7 +155,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\VulkanSDK\1.1.126.0\Include;C:\VulkanSDK\1.1.126.0\Lib</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\VulkanSDK\1.2.135.0\Include;C:\VulkanSDK\1.2.135.0\Lib</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -170,14 +170,19 @@
     <ClCompile Include="Initializers.cpp" />
     <ClCompile Include="Validation.cpp" />
     <ClCompile Include="Vulkan.cpp" />
+    <ClCompile Include="VulkanDevice.cpp" />
     <ClCompile Include="VulkanInstance.cpp" />
+    <ClCompile Include="VulkanPhysicalDevice.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BUILD_ORDER.h" />
-    <ClInclude Include="Initializers.h" />
+    <ClInclude Include="Initilizers.h" />
+    <ClInclude Include="QueueFamilyIndices.h" />
     <ClInclude Include="Validation.h" />
     <ClInclude Include="VulkanConfiguration.h" />
+    <ClInclude Include="VulkanDevice.h" />
     <ClInclude Include="VulkanInstance.h" />
+    <ClInclude Include="VulkanPhysicalDevice.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
